@@ -17,10 +17,12 @@ public class ThrowsException {
         // 각 상황마다 예외처리
         try {
             test.loadClass("a.txt", "java.lang.String"); // 메서드를 호출할 때 예외를 처리함
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException | ClassNotFoundException e) {
             System.out.println(e);
-        } catch (ClassNotFoundException e) {
-            System.out.println(e);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
+
     }
 }
