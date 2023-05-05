@@ -1,6 +1,7 @@
 package day004.collection.arrayList;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 class MyStack {
     private ArrayList<String> arrayStack = new ArrayList<>();

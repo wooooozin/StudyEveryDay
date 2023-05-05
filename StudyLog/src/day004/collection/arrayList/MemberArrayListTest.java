@@ -2,6 +2,8 @@ package day004.collection.arrayList;
 
 import day004.collection.Member;
 
+import java.util.Iterator;
+
 public class MemberArrayListTest {
     public static void main(String[] args) {
         MemberArrayList memberArrayList = new MemberArrayList();
@@ -27,5 +29,8 @@ public class MemberArrayListTest {
         memberArrayList.addIndexMember(woozi, 0);
         memberArrayList.showAllMember();
 
+        // Iterator
+        System.out.println(memberArrayList.fixRemoveMember(woozi.getMemberId()));
+        memberArrayList.showAllMember();
     }
 }
