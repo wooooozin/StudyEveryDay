@@ -1,4 +1,4 @@
-package day004.collection.ArrayList;
+package day004.collection.arrayList;
 
 import day004.collection.Member;
 
