@@ -1,6 +1,6 @@
 package day004.collection;
 
-public class Member {
+public class Member implements Comparable<Member> {
     private int memberId;
     private String memberName;
 
@@ -46,5 +46,10 @@ public class Member {
             }
         }
         return false;
+    }
+
+    @Override
+    public int compareTo(Member member) {
+        return (this.memberId - member.memberId) * -1;
     }
 }
