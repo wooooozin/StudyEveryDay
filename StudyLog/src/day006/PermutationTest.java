@@ -1,6 +1,5 @@
-package day0006;
+package day006;
 
-import java.util.ArrayList;
 import java.util.stream.IntStream;
 
 public class PermutationTest {

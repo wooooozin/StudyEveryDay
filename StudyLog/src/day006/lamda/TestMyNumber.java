@@ -1,4 +1,4 @@
-package day0006.lamda;
+package day006.lamda;
 
 public class TestMyNumber {
     public static void main(String[] args) {
