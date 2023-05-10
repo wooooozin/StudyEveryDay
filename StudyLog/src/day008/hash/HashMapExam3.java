@@ -1,30 +1,20 @@
 package day008.hash;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+//import java.util.Arrays;
 import java.util.HashMap;
 
 public class HashMapExam3 {
 
-    static int solution(int[] array) {
-        int answer = 0;
-        HashMap<Integer, Integer> hashMap = new HashMap<>();
-        for (int n : array) {
-            hashMap.put(n, hashMap.getOrDefault(n, 0) + 1);
-        }
-
-        int[] results = new int[hashMap.size()];
-        int idx = 0;
-        if (hashMap.size() == 1) {
-            return array[0];
-        }
-        for (int key : hashMap.keySet()) {
-            int count = hashMap.get(key);
-            results[idx++] = count;
-        }
-        Arrays.sort(results);
-        answer = (results[results.length - 1] == results[results.length -2]) ? -1 : results[results.length - 1];
-
-        return answer;
+    static int solution(int[] array) {HashMap<Integer, Integer> nH = new HashMap<>(); for(int x : array){
+        nH.put(x, nH.getOrDefault(x, 0) + 1); }
+        int max = 0;
+        for(int key : nH.keySet()){
+            if(nH.get(key) > max) max = nH.get(key); }
+        ArrayList<Integer> al = new ArrayList<>(); for(int key : nH.keySet()){
+            if(nH.get(key) == max) al.add(key); }
+        if(al.size() > 1) return -1;
+        return al.get(0);
     }
 
     public static void main(String[] args) {
