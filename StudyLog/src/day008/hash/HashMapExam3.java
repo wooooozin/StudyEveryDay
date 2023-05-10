@@ -1,5 +1,6 @@
 package day008.hash;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class HashMapExam3 {
@@ -11,17 +12,19 @@ public class HashMapExam3 {
             hashMap.put(n, hashMap.getOrDefault(n, 0) + 1);
         }
 
-        boolean isDuplicate = false;
+        int[] results = new int[hashMap.size()];
+        int idx = 0;
+        if (hashMap.size() == 1) {
+            return array[0];
+        }
         for (int key : hashMap.keySet()) {
             int count = hashMap.get(key);
-            if (count == answer) {
-                isDuplicate = true;
-            } else if (count > answer) {
-                answer = count;
-                isDuplicate = false;
-            }
+            results[idx++] = count;
         }
-        return isDuplicate ? -1 : answer;
+        Arrays.sort(results);
+        answer = (results[results.length - 1] == results[results.length -2]) ? -1 : results[results.length - 1];
+
+        return answer;
     }
 
     public static void main(String[] args) {
