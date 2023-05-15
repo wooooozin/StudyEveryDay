@@ -3,7 +3,7 @@ package day013;
 
 import java.util.*;
 
-class Solution {
+class Solution1 {
     public int[] solution(int n) {
         int idx = (n % 2 == 0) ? (n / 2) : (( n / 2) + 1);
         int[] answer = new int[idx];
@@ -22,7 +22,7 @@ class Solution {
 public class HateEvenNumber {
 
     public static void main(String[] args) {
-        Solution st = new Solution();
+        Solution1 st = new Solution1();
         System.out.println(Arrays.toString(st.solution(10))); // [1, 3, 5, 7, 9]
         System.out.println(Arrays.toString(st.solution(15))); // [1, 3, 5, 7, 9, 11, 13, 15]
     }
