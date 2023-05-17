@@ -3,12 +3,6 @@ package day016;
 import java.util.Arrays;
 
 public class SimulationTest2 {
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(solution("RRRDDDUUUUUUL", 5)));
-        System.out.println(Arrays.toString(solution("DDDRRRDDLL", 7)));
-        System.out.println(Arrays.toString(solution("RRRRRDDDDDU", 5)));
-        System.out.println(Arrays.toString(solution("RRRRDDDRRDDLLUU", 6)));
-    }
 
     public static int[] solution(String str, int n) {
         int x = 0;
@@ -33,5 +27,12 @@ public class SimulationTest2 {
             y = ny;
         }
         return new int[] {x, y};
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(solution("RRRDDDUUUUUUL", 5)));
+        System.out.println(Arrays.toString(solution("DDDRRRDDLL", 7)));
+        System.out.println(Arrays.toString(solution("RRRRRDDDDDU", 5)));
+        System.out.println(Arrays.toString(solution("RRRRDDDRRDDLLUU", 6)));
     }
 }
