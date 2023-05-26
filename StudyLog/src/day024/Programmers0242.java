@@ -15,7 +15,7 @@ public class Programmers0242 {
     }
 
     public static void main(String[] args) {
-        int[] section = {2, 3, 6};
+        int[] section = {2, 3, 6, 9};
         int n = 8;
         int m = 4;
 
