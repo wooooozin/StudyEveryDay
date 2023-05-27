@@ -4,8 +4,8 @@ package day025;
 class BinaryTree {
     char[] arr;
 
-    public BinaryTree() {}
-    public BinaryTree(char[] data) {
+    BinaryTree() {}
+    BinaryTree(char[] data) {
         this.arr = data.clone();
     }
 
@@ -22,6 +22,44 @@ class BinaryTree {
             this.preOder(right);
         }
     }
+
+    public void inOrder(int idx) {
+        int left = 2 * idx + 1;
+        int right = 2 * idx + 2;
+
+        if (left < this.arr.length) {
+            this.inOrder(left);
+        }
+        System.out.print(this.arr[idx] + " ");
+
+        if (right < this.arr.length) {
+            this.inOrder(right);
+        }
+    }
+
+    public void postOrder(int idx) {
+        int left = 2 * idx + 1;
+        int right = 2 * idx + 2;
+
+        if (left < this.arr.length) {
+            this.postOrder(left);
+        }
+
+        if (right < this.arr.length) {
+            this.postOrder(right);
+        }
+
+        System.out.print(this.arr[idx] + " ");
+
+
+    }
+
+    public void levelOrder(int idx) {
+        for (int i = 0; i < this.arr.length; i++) {
+            System.out.print(this.arr[i] + " ");
+        }
+        System.out.println();
+    }
 }
 public class TreeTraversalArrayTest {
     public static void main(String[] args) {
@@ -32,6 +70,10 @@ public class TreeTraversalArrayTest {
 
         BinaryTree bt = new BinaryTree(arr);
         bt.preOder(0);
-
+        bt.inOrder(0);
+        System.out.println();
+        bt.postOrder(0);
+        System.out.println();
+        bt.levelOrder(0);
     }
 }
