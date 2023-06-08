@@ -31,6 +31,6 @@ public class Main08Test {
 
         Animal cat1 = new Cat();
         cat1.sound();
-        
+
     }
 }
