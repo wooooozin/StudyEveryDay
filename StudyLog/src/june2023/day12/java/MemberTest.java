@@ -1,6 +1,8 @@
 package june2023.day12.java;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+
 class Member {
 
     private int memberId;        //회원 아이디
@@ -44,12 +46,20 @@ class MemberArrayList {
 
     public boolean removeMember(int memberId){  // 멤버 아이디를 매개변수로, 삭제 여부를 반환
 
-        for(int i =0; i<arrayList.size(); i++){ // 해당 아이디를 가진 멤버를 ArrayList에서 찾음
-            Member member = arrayList.get(i);
-            int tempId = member.getMemberId();
-            if(tempId == memberId){            // 멤버아이디가 매개변수와 일치하면
-                arrayList.remove(i);           // 해당 멤버를 삭제
-                return true;                   // true 반환
+//        for(int i =0; i<arrayList.size(); i++){ // 해당 아이디를 가진 멤버를 ArrayList에서 찾음
+//            Member member = arrayList.get(i);
+//            int tempId = member.getMemberId();
+//            if(tempId == memberId){            // 멤버아이디가 매개변수와 일치하면
+//                arrayList.remove(i);           // 해당 멤버를 삭제
+//                return true;                   // true 반환
+//            }
+//        }
+        Iterator<Member> iterator = arrayList.iterator();
+        while (iterator.hasNext()) {
+            Member member = iterator.next();
+            if (member.getMemberId() == memberId) {
+                arrayList.remove(member);
+                return true;
             }
         }
 
@@ -58,8 +68,12 @@ class MemberArrayList {
     }
 
     public void showAllMember(){
-        for(Member member : arrayList){
-            System.out.println(member);
+//        for(Member member : arrayList){
+//            System.out.println(member);
+//        }
+        Iterator<Member> iterator = arrayList.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
         }
         System.out.println();
     }
