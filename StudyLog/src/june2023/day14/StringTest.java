@@ -18,9 +18,19 @@ public class StringTest {
         return "YES";
     }
 
+    public static String solution2(String str) {
+        String answer = "NO";
+        str = str.toUpperCase().replaceAll("[^A-Z]", "");
+        String tmp = new StringBuilder(str).reverse().toString();
+        if (str.equals(tmp)) {
+            return "YES";
+        }
+        return answer;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-        System.out.println(solution(str));
+        System.out.println(solution2(str));
     }
 }
