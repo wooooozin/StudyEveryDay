@@ -30,7 +30,7 @@ public class Main {
             arr[i] = sc.nextInt();
         }
 
-        for (int num : solution1(n, arr)) {
+        for (int num : solution(n, arr)) {
             System.out.print(num + " ");
         }
     }
