@@ -3,6 +3,9 @@ package august2023.day10;
 public class Main {
     static int[] arr;
     private static int dfs(int n) {
+        if (arr[n] > 0) {
+            return arr[n];
+        }
         if (n == 1) {
             return arr[n] = 1;
         } else if (n == 2) {
@@ -13,7 +16,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int n = 20;
+        int n = 30;
         arr = new int[n + 1];
         dfs(n);
         for (int i = 1; i <= n; i++) {
