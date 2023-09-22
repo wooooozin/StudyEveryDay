@@ -1,11 +1,13 @@
 package sept2023.day23;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
     static int n, m, answer = Integer.MAX_VALUE;
 
-    private static void dfs(int L, int sum, int[] arr) {
+    private static void dfs(int L, int sum, Integer[] arr) {
         if (sum > m) {
             return;
         }
@@ -21,10 +23,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
-        int[] arr = new int[n];
+        Integer[] arr = new Integer[n];
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
+        Arrays.sort(arr, Collections.reverseOrder());
         m = sc.nextInt();
         dfs(0, 0, arr);
         System.out.println(answer);
